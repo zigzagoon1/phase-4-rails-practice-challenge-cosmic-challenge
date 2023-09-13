@@ -1,10 +1,11 @@
 class ScientistsController < ApplicationController
+rescue_from ActiveRecord::RecordInvalid, with: 
 
     before_action :one_scientist, only: [:show, :update, :destroy]
 
 
     def index
-        render json: Scientist.all
+        render json: Scientist.all, 
     end
 
     def show
